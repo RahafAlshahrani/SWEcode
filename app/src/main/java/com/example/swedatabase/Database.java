@@ -38,7 +38,7 @@ public Database(Context cont){
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         //create table on database
-        String CreateTableStatment="CREATE TABLE " +eventTable + " (" +eventTitle + " varchar PRIMARY KEY, "+ eventDate + " INT, "+ eventTime + " INT, "+ eventLocation + " TEXT, "+ eventtype + " TEXT, "+ eventDescription + " TEXT )";
+        String CreateTableStatment="CREATE TABLE " +eventTable + " (" +eventTitle + " varchar PRIMARY KEY, "+ eventDate + " varchar, "+ eventTime + " INT, "+ eventLocation + " TEXT, "+ eventtype + " TEXT, "+ eventDescription + " TEXT )";
         sqLiteDatabase.execSQL(CreateTableStatment);
     }
 

@@ -7,13 +7,13 @@ import java.util.Date;
 
 public class Event {
 private String title;
-private int date;
+private String date;
 private int time;
 private String location;
 private String eventType;
 private String description;
 
-    public Event(String title, int date, int time, String location, String eventType, String description) {
+    public Event(String title, String date, int time, String location, String eventType, String description) {
         this.title = title;
         this.date = date;
         this.time = time;
@@ -36,7 +36,7 @@ private String description;
         return title;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -60,7 +60,7 @@ private String description;
         this.title = title;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
