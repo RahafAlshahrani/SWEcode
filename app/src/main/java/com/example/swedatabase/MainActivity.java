@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+//test
                 Event Event1;
                 Database db;
                 try {
