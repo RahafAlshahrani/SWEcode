@@ -36,43 +36,42 @@ public class MainActivity extends AppCompatActivity {
         add=findViewById(R.id.add);
 
 
-
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
-
                 Event Event1;
                 Database db;
                 try {
-                    if (title.length()==0)
-                        title.setError("Enter title") ;
-                    if (date.length()==0)
-                        date.setError("Enter date") ;
-                    if (time.length()==0)
-                        time.setError("Enter time") ;
-                    if (location.length()==0)
-                        location.setError("Enter location") ;
-                    if (type.length()==0)
-                        type.setError("Enter type") ;
-                    if (des.length()==0)
-                        des.setError("Enter description") ;
-                    Event1 = new Event(title.getText().toString(), date.getText().toString(), Integer.parseInt(time.getText().toString()), location.getText().toString(), type.getText().toString(), des.getText().toString());
+                    if (title.length() == 0) {
+                        title.setError("Enter title");
+                    } else if (date.length() == 0) {
+                        date.setError("Enter date");
+                    } else if (time.length() == 0) {
+                        time.setError("Enter time");
+                    } else if (location.length() == 0) {
+                        location.setError("Enter location");
+                    } else if (type.length() == 0) {
+                        type.setError("Enter type");
+                    } else if (des.length() == 0) {
+                        des.setError("Enter description");
+                    } else {
+                        Event1 = new Event(title.getText().toString(), date.getText().toString(), Integer.parseInt(time.getText().toString()), location.getText().toString(), type.getText().toString(), des.getText().toString());
+                        db = new Database(MainActivity.this);
+                        boolean success = db.addEvent(Event1);
+                        if(success) {
+                            Toast.makeText(MainActivity.this, success+" [The event was added successfully]", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
                 catch (Exception e) {
                     Toast.makeText(MainActivity.this, "Error add event!", Toast.LENGTH_SHORT).show();
                     Event1=new Event("one","2",4,"ksu","gaming","not new event");
                 }
 
-                db = new Database(MainActivity.this);
 
-                boolean success = db.addEvent(Event1);
-                if(success) {
-                    Toast.makeText(MainActivity.this, success+" [The event was added successfully]", Toast.LENGTH_SHORT).show();
-                }
             }
-    });
+        });
 }
 
 
